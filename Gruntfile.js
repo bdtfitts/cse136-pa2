@@ -15,11 +15,11 @@ module.exports = function (grunt) {
                     generateReport: false
                 },
                 files: {
-                    src: ['*.html', 'assets/templates/**/*.hbs']
+                    src: ['*.html', 'assets/templates/**/*.hbs.html']
                 }
             },
             watch: {
-                files: ['*.html', 'assets/templates/**/*.html'],
+                files: ['*.html', 'assets/templates/**/*.html', 'assets/templates/**/*.hbs.html'],
                 tasks: ['validation', 'handlebars']
             },
             handlebars: {
@@ -27,7 +27,7 @@ module.exports = function (grunt) {
                     options: {
                     },
                     files: {
-                        'assets/javascript/templates.js': 'assets/templates/**/*.hbs'
+                        'assets/javascript/templates.js': 'assets/templates/**/*.hbs.html'
                     }
                 }
             }
