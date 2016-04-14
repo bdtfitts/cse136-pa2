@@ -19,6 +19,7 @@
   "dependencies": {
     "pure": "^0.6.0",
     "components-font-awesome": "^4.5.0",
-    "animate.css": "^3.5.1"
+    "animate.css": "^3.5.1",
+    "handlebars": "^4.0.5"
   }
 }

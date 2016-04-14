@@ -2,6 +2,7 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-w3c-html-validation');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-handlebars');
 
     grunt.registerTask('default', ['validation']);
 
@@ -14,14 +15,23 @@ module.exports = function (grunt) {
                     generateReport: false
                 },
                 files: {
-                    src: ['*.html', 'assets/templates/**/*.tpl.html', 'assets/templates/**/*.html', '!assets/templates/wrapfile.html']
+                    src: ['*.html', 'assets/templates/**/*.hbs']
                 }
             },
             watch: {
                 files: ['*.html', 'assets/templates/**/*.html'],
-                tasks: ['validation']
+                tasks: ['validation', 'handlebars']
+            },
+            handlebars: {
+                compile: {
+                    options: {
+                    },
+                    files: {
+                        'assets/javascript/templates.js': 'assets/templates/**/*.hbs'
+                    }
+                }
             }
-        });
 
+        });
 
 };

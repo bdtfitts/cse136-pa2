@@ -40,3 +40,4 @@ assets/lib
 
 # Linter files
 w3cErrors
+validation-*
