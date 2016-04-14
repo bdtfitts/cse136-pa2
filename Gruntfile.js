@@ -4,7 +4,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-handlebars');
 
-    grunt.registerTask('default', ['validation']);
+    grunt.registerTask('default', ['validation', 'handlebars']);
 
     grunt.initConfig(
         {
@@ -25,6 +25,7 @@ module.exports = function (grunt) {
             handlebars: {
                 compile: {
                     options: {
+                        namespace: 'App.templates'
                     },
                     files: {
                         'assets/javascript/templates.js': 'assets/templates/**/*.hbs.html'
