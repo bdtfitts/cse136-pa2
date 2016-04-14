@@ -1,8 +1,9 @@
 module.exports = function (grunt) {
 
-    grunt.registerTask('default', ['validation']);
+    grunt.loadNpmTasks('grunt-w3c-html-validation');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
+    grunt.registerTask('default', ['validation']);
 
     grunt.initConfig(
         {
@@ -10,11 +11,11 @@ module.exports = function (grunt) {
                 options: {
                 },
                 files: {
-                    src: ['**/*.html']
+                    src: ['*.html', 'assets/templates/**/*.html']
                 }
             },
             watch: {
-                files: ['**/*.html'],
+                files: ['*.html', 'assets/templates/**/*.html'],
                 tasks: ['validation']
             }
         });
