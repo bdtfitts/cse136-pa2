@@ -32,6 +32,12 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
+#intellj idea files
 .idea
 
+# Project dependancies
 assets/lib
+
+# Linter files
+w3cErrors
+validation-*
