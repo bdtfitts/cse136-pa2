@@ -9,9 +9,12 @@ module.exports = function (grunt) {
         {
             validation: {
                 options: {
+                    doctype: 'HTML5',
+                    wrapFile: 'assets/templates/wrapfile.html',
+                    generateReport: false
                 },
                 files: {
-                    src: ['*.html', 'assets/templates/**/*.html']
+                    src: ['*.html', 'assets/templates/**/*.tpl.html', 'assets/templates/**/*.html', '!assets/templates/wrapfile.html']
                 }
             },
             watch: {
