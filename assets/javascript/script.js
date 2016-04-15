@@ -1,7 +1,14 @@
-(function(){
+(function () {
+
+    var App = this['App'] || {};
     
-    function App() {
-        /* App will be the parent class for the app */
-    }
+    var BookmarkManager = {};
+
+    BookmarkManager.showBookmarks = function showBookmarks() {
+        return 'foo';
+    };
     
+    App.bookmarkManager = BookmarkManager;
+    
+    return App;
 })();
