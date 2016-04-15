@@ -13,4 +13,4 @@ Haven't defined the core usage. As this is defined we can add details about this
 #c1bdba  // background
 #918e8d // Body text
 ```  
-[See palate here](coolors.co/6154a1-6bc4a5-4b4b60-7ab1df-39789f)
+[See palate here](https://coolors.co/6154a1-6bc4a5-4b4b60-7ab1df-39789f)
