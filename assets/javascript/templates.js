@@ -1,12 +1,10 @@
 this["App"] = this["App"] || {};
 this["App"]["templates"] = this["App"]["templates"] || {};
 
-this["App"]["templates"]["assets/templates/upload-file.hbs.html"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+this["App"]["templates"]["assets/templates/basic-dialog.hbs.html"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<!-- TODO Create custom element -->\n<div class=\"dialog\">\n    <!-- TODO close button -->\n    <bm-dialog-close><span class=\"fa fa-times\"></span></bm-dialog-close>\n    <!-- TODO Widget title if needed -->\n    <bm-dialog-body class=\"drag-and-drop-container\">\n        <!-- TODO Content for dialog -->\n    </bm-dialog-body>\n</div>\n";
+},"useData":true});
 
-  return "<div class=\"entry\">\n    <h1>"
-    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "</h1>\n    <div class=\"body\">\n        "
-    + alias4(((helper = (helper = helpers.body || (depth0 != null ? depth0.body : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"body","hash":{},"data":data}) : helper)))
-    + "\n    </div>\n</div>\n";
+this["App"]["templates"]["assets/templates/upload-file.hbs.html"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<bm-upload-file-dialog class=\"dialog\">\n    <bm-dialog-close><span onclick=\"App.bookMarkUploader.remove()\" class=\"fa fa-times\"></span></bm-dialog-close>\n    <bm-dialog-body class=\"drag-and-drop-container\">\n        <div class=\"drag-and-drop-inner\">\n            <div class=\"text-center\">\n                <span class=\"fa fa-cloud-upload\"></span>\n                <p>drag and drop bookmark file here</p>\n                <a href=\"javascript: void(0);\">Open file explorer</a>\n            </div>\n        </div>\n    </bm-dialog-body>\n</bm-upload-file-dialog>";
 },"useData":true});

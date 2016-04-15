@@ -41,3 +41,5 @@ assets/lib
 # Linter files
 w3cErrors
 validation-*
+
+assets/javascript/templates.js
