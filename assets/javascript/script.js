@@ -36,15 +36,37 @@
     App.bookMarkUploader = new BookmarkUploader();
     App.bookMarkCreate = new BookmarkCreate();
 
+    
     /* Code for bookmark explorer */
     function BookmarkExplorer() {
+        this.container = document.getElementById('bookmark-list');
+        //this.template = App.templates['assets/templates/bookmark-list.hbs.html'];
     }
 
     BookmarkExplorer.prototype.showBookmarks = function showBookmarks() {
-        return 'foo';
+        var bookExp = this;
+        var context = ['fuck1', '', 'fuck3', 'fuck4', 'fuck5', '', '']
+        //document.getElementById('bookmark-list').innerHTML += this.template(context);
+        context.forEach(function (element) {
+            if (element) {
+                bookExp.printBookmark({book:element});
+            }
+            else{
+                bookExp.printFolder({book:element});
+            }
+        })
     };
 
+    BookmarkExplorer.prototype.printBookmark = function printBookmark(context) {
+        this.template = App.templates['assets/templates/bookmark-item.hbs.html'];
+        document.getElementById('bookmark-list').innerHTML += this.template(context);
+    };
 
+    BookmarkExplorer.prototype.printFolder = function printFolder(context) {
+        this.template = App.templates['assets/templates/bookmark-folder.hbs.html'];
+        document.getElementById('bookmark-list').innerHTML += this.template(context);
+    };
+    
     /* Bookmark uploader */
     function BookmarkUploader() {
         this.container = document.getElementById('bookmark-dialog');
@@ -78,3 +100,23 @@
     }
 
 })(window);
+
+
+
+var bookmarks = {
+    parent: null,
+    name: 'bar',
+    url: '',
+    children:[
+    {
+        parent: 'bar',
+        name: 'foo',
+        url: '//foo.com',
+        children: []
+    },{
+        parent: 'bar',
+        name: 'baz',
+        url: '//baz.com',
+        children: []
+        }
+    ]}
