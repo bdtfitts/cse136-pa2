@@ -9,15 +9,6 @@
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="assets/lib/components-font-awesome/css/font-awesome.min.css">
 
-    <style>
-        .first {
-            background: green;
-        }
-
-        .second {
-            background: orange;
-        }
-    </style>
 </head>
 <body>
 
@@ -63,24 +54,11 @@
         <div id="bookmark-dialog" class="col-md-8">
             <!-- Your dialogs will get appended here -->
         </div>
-        <div id="c" class="first">
-            TEST
-        </div>
+
     </div>
 </div>
 
-<script>
-var container = document.querySelector('#c');
 
-container.addEventListener('mouseenter', function(){
-this.classList.remove('first');
-this.classList.add('second');
-})
-container.addEventListener('mouseleave', function(){
-this.classList.add('first');
-this.classList.remove('second');
-})
-</script>
 
 <script src="assets/lib/handlebars/handlebars.min.js"></script>
 <script src="assets/javascript/templates.js"></script>
