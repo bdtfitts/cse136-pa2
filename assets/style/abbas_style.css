@@ -21,19 +21,32 @@ label {
     -webkit-backface-visibility: hidden;
     pointer-events: none;
     font-size:22px;
-.req {
+}
+
+label.req {
+    position:absolute;
+    transform:translateY(6px);
+    left:13px;
+    color:rgba($white,.5);
+    transition:all 0.25s ease;
+    -webkit-backface-visibility: hidden;
+    pointer-events: none;
+    font-size:22px;
     margin:2px;
     color: #1ab188;
-}
 }
 
 label.active {
     transform:translateY(50px);
     left:2px;
     font-size:14px;
-.req {
-    opacity:0;
 }
+
+label.active.req {
+    transform:translateY(50px);
+    left:2px;
+    font-size:14px;
+    opacity:0;
 }
 
 label.highlight {
@@ -51,10 +64,10 @@ input, textarea {
     color: white;
     border-radius:0;
     transition:border-color .25s ease, box-shadow .25s ease;
-&:focus {
-     outline:0;
-     border-color:#1ab188;
- }
+/*&:focus {*/
+     /*outline:0;*/
+     /*border-color:#1ab188;*/
+ /*}*/
 }
 
 textarea {

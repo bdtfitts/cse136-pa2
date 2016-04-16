@@ -400,10 +400,10 @@ bm-dialog-close .span {
 }
 
 bm-create-dialog,
-bm-upload-file-dialog {
+bm-upload-file-dialog, bm-edit-dialog {
     display: flex;
     flex-flow: row wrap;
-    height: 23em;
+    height: auto;
 }
 
 bm-upload-file-dialog .drag-and-drop-inner p {
@@ -439,4 +439,10 @@ colors {
     color: rgba(75, 75, 96, 100);
     color: rgba(122, 177, 223, 100);
     color: rgba(57, 120, 159, 100);
+}
+
+
+/*Abbas Additions*/
+.bookmark:hover {
+    cursor: pointer;
 }

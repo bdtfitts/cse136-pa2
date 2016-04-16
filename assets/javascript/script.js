@@ -137,12 +137,12 @@
 
     BookmarkEdit.prototype.show = function showBookmarkEdit() {
         console.log(this.parent);
-        if(document.getElementsByTagName('bm-create-dialog').length !== 0) return;
+        if(document.getElementsByTagName('bm-edit-dialog').length !== 0) return;
         document.getElementById('bookmark-dialog').innerHTML += this.template();
     };
 
     BookmarkEdit.prototype.remove = function hideBookmarkEdit() {
-        var dialog = document.getElementsByTagName('bm-create-dialog');
+        var dialog = document.getElementsByTagName('bm-edit-dialog');
         this.container.removeChild(dialog[0]);
     };
 
