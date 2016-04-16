@@ -2,9 +2,10 @@
     1. Grid
     2. Layout
     3. Page header
+    4. Upload Dialog
 */
 
-/* Grid */
+/* 1. Grid */
 *, *:after, *:before {
     box-sizing: border-box;
 }
@@ -13,6 +14,18 @@ html, body {
     font-size: 10px;
 }
 
+a {
+    text-decoration: none;
+    color: #39789F;
+}
+
+a:hover, a:active {
+    color: #7AB1DF;
+}
+
+a:visited {
+    color: #6154A1;
+}
 .container {
     margin: 0 auto;
     padding: 0 1.4rem;
@@ -249,7 +262,7 @@ html, body {
     }
 }
 
-@media screen and (min-width: 64em){
+@media screen and (min-width: 64em) {
     .col-lg-1 {
         flex-basis: 8.333%;
         max-width: 8.333%;
@@ -311,17 +324,11 @@ html, body {
     }
 }
 
-.fill-height-or-more {
-    display: flex;
-    flex-direction: column;
+.text-center {
+    text-align: center;
 }
 
-.fill-height-or-more > div {
-    /* these are the flex items */
-    flex: 1;
-}
-
-/* Layout */
+/* 2. Layout */
 html, body {
     font-size: 16px;
     background-color: #c1bdba;
@@ -341,20 +348,24 @@ h1 {
     height: 90vh;
 }
 
-
 #bookmark-dialog {
 
 }
 
 .dialog {
+    color: #c1bdba;
     margin-top: 1.4rem;
     margin-bottom: 1.4rem;
+    padding: 1em;
+    background-color: #4b4b60;
+    box-shadow: .1em .1em .6em rgba(82, 78, 75, 0.59);
 }
 
 #bookmark-dialog div:first-child {
     margin-top: 0;
 }
-/* Page header */
+
+/* 3. Page header */
 header {
     margin: 0 auto;
 }
@@ -365,4 +376,67 @@ header .sub-header {
 
 header h1 {
     margin-bottom: 0;
+}
+
+/* 4. Bookmark Upload Dialog */
+bm-dialog-close {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    flex: 1 100%;
+}
+
+bm-dialog-close span[onclick] {
+    cursor: pointer;
+}
+
+bm-dialog-body {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+bm-dialog-close .span {
+    margin: 0;
+}
+
+bm-create-dialog,
+bm-upload-file-dialog {
+    display: flex;
+    flex-flow: row wrap;
+    height: 23em;
+}
+
+bm-upload-file-dialog .drag-and-drop-inner p {
+    margin: .2em;
+}
+
+bm-upload-file-dialog .drag-and-drop-container .drag-and-drop-inner {
+    border: 3px dashed #c1bdba;
+    width: 100%;
+    height: 100%;
+    border-radius: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+bm-upload-file-dialog .drag-and-drop-container .drag-and-drop-inner span.fa {
+    font-size: 4em;
+}
+
+bm-upload-file-dialog .drag-and-drop-container {
+    flex-basis: 100%;
+    max-width: 100%;
+    height: 90%;
+    background-color: rgba(193, 189, 186, 0.50);
+    padding: 1em;
+    border-radius: .5em;
+}
+
+colors {
+    color: rgba(97, 84, 161, 100);
+    color: rgba(107, 196, 165, 100);
+    color: rgba(75, 75, 96, 100);
+    color: rgba(122, 177, 223, 100);
+    color: rgba(57, 120, 159, 100);
 }

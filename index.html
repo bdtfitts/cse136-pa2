@@ -7,25 +7,47 @@
     <title>Your page title</title>
 
     <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/lib/components-font-awesome/css/font-awesome.min.css">
 </head>
 <body>
 
 <header class="container">
     <h1>Bookmark Manager</h1>
-    <h4 class="sub-header">Wecodeinourunderpants - <span class="hinted-sub-header">cse 136 with Professor Thomas Powell</span></h4>
+    <h4 class="sub-header">Wecodeinourunderpants - <span class="hinted-sub-header">
+        cse 136 with Professor Thomas Powell</span></h4>
 </header>
 
 <div id="app-content" class="container" style="height: 64em;">
     <div class="row">
         <div class="col-md-4">
-            <section id="bookmark-explorer" class="fill-height-or-more">
+            <section id="bookmark-explorer">
+                <div style="float: right">
+                    <span class="fa fa-plus-square-o"></span>
+                    <span class="fa fa-folder-o"></span>
+                    <span class="fa fa-cloud-upload"></span>
+                    <span class="fa fa-cloud-download"></span>
+                </div>
                 <h4 class="align-center">Bookmarks</h4>
                 <div style="background-color: #A2AEBB"></div>
+                <a style="font-size: 2em" href="javascript: void(0);" onclick="App.bookMarkUploader.show()"><span
+                        class="fa fa-cloud-upload"></span>&lt;== Sample button!</a>
+                <!-- Sample button for add new bookmark should be deleted and replaced later
+                     with window explorer buttons -->
+                <br>
+                <a style="font-size: 2em" href="javascript: void(0);" onclick="App.bookMarkCreate.show()"><span
+                             class="fa fa-plus"></span> Create Bookmark</a>
+                <hr>
+
+                <div id="bookmark-list" onload="App.bookmarkExplorer.showBookmarks();">
+
+                </div>
+
             </section>
+
+
         </div>
         <div id="bookmark-dialog" class="col-md-8">
-            <div class="dialog" style="background-color: #4b4b60; height: 20em;"></div>
-            <div class="dialog" style="background-color: #4b4b60; height: 20em;"></div>
+            <!-- Your dialogs will get appended here -->
         </div>
     </div>
 </div>
@@ -33,5 +55,6 @@
 <script src="assets/lib/handlebars/handlebars.min.js"></script>
 <script src="assets/javascript/templates.js"></script>
 <script src="assets/javascript/script.js"></script>
+<script>window.onload = App.bookmarkExplorer.showBookmarks();</script>
 </body>
 </html>
