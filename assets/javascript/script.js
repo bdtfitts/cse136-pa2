@@ -79,10 +79,10 @@
         
         current.forEach(function (current) {
             if (current.url) {
-                bookExp.printBookmark({name:current.name, url:current.url});
+                bookExp.printBookmark(current);
             }
             else{
-                bookExp.printFolder({name:current.name});
+                bookExp.printFolder(current);
             }
         })
     };
