@@ -3,6 +3,7 @@
     2. Layout
     3. Page header
     4. Upload Dialog
+    5. Search Bar
 */
 
 /* 1. Grid */
@@ -431,6 +432,24 @@ bm-upload-file-dialog .drag-and-drop-container {
     background-color: rgba(193, 189, 186, 0.50);
     padding: 1em;
     border-radius: .5em;
+}
+
+/* 5. Search Bar */
+.search-bar {
+    width: 100%;
+    padding: 0.5em 0.5em;
+    position: relative;
+}
+.search-bar input {
+    width: 100%;
+    padding-right: 15%;
+}
+.search-bar i {
+    position: absolute;
+    bottom: 0.75em;
+    cursor: pointer;
+    padding-right: 1.5em;
+    right: 0.5em;
 }
 
 colors {
