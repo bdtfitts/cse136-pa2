@@ -34,6 +34,7 @@
 
     App.bookmarkExplorer = new BookmarkExplorer();
     App.bookMarkUploader = new BookmarkUploader();
+    App.bookMarkCreate = new BookmarkCreate();
 
     /* Code for bookmark explorer */
     function BookmarkExplorer() {
@@ -59,5 +60,21 @@
         var dialog = document.getElementsByTagName('bm-upload-file-dialog');
         this.container.removeChild(dialog[0]);
     };
+
+    /* Bookmark create */
+    function BookmarkCreate() {
+      this.container = document.getElementById('bookmark-dialog');
+      this.template = App.templates['assets/templates/bm-create.hbs.html'];
+    }
+
+    BookmarkCreate.prototype.show = function showBookmarkCreate() {
+      if(document.getElementsByTagName('bm-create-dialog').length !== 0) return;
+      document.getElementById('bookmark-dialog').innerHTML += this.template();
+    }
+
+    BookmarkCreate.prototype.remove = function hideBookmarkCreate() {
+      var dialog = document.getElementsByTagName('bm-create-dialog');
+      this.container.removeChild(dialog[0]);
+    }
 
 })(window);
