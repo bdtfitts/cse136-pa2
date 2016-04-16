@@ -399,6 +399,7 @@ bm-dialog-close .span {
     margin: 0;
 }
 
+bm-create-dialog,
 bm-upload-file-dialog {
     display: flex;
     flex-flow: row wrap;
