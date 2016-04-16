@@ -136,7 +136,6 @@
     }
 
     BookmarkEdit.prototype.show = function showBookmarkEdit() {
-        console.log(this.parent);
         if(document.getElementsByTagName('bm-edit-dialog').length !== 0) return;
         document.getElementById('bookmark-dialog').innerHTML += this.template();
     };
