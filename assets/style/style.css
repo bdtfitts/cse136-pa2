@@ -26,6 +26,7 @@ a:hover, a:active {
 a:visited {
     color: #6154A1;
 }
+
 .container {
     margin: 0 auto;
     padding: 0 1.4rem;
@@ -343,6 +344,10 @@ h1 {
     margin: 0 auto;
 }
 
+bm-app {
+    display: block;
+}
+
 #bookmark-explorer {
     background-color: #4b4b60;
     height: 90vh;
@@ -372,10 +377,13 @@ header {
 
 header .sub-header {
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 header h1 {
+    margin-top: 0;
     margin-bottom: 0;
+    font-size: 3em;
 }
 
 /* 4. Bookmark Upload Dialog */
