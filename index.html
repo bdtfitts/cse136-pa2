@@ -13,19 +13,33 @@
 
 <header class="container">
     <h1>Bookmark Manager</h1>
-    <h4 class="sub-header">Wecodeinourunderpants - <span
-            class="hinted-sub-header">cse 136 with Professor Thomas Powell</span></h4>
+    <h4 class="sub-header">Wecodeinourunderpants - <span class="hinted-sub-header">
+        cse 136 with Professor Thomas Powell</span></h4>
 </header>
 
 <div id="app-content" class="container" style="height: 64em;">
     <div class="row">
         <div class="col-md-4">
             <section id="bookmark-explorer">
+                <div style="float: right">
+                    <span class="fa fa-plus-square-o"></span>
+                    <span class="fa fa-folder-o"></span>
+                    <span class="fa fa-cloud-upload"></span>
+                    <span class="fa fa-cloud-download"></span>
+                </div>
                 <h4 class="align-center">Bookmarks</h4>
                 <div style="background-color: #A2AEBB"></div>
                 <a style="font-size: 2em" href="javascript: void(0);" onclick="App.bookMarkUploader.show()"><span
                         class="fa fa-cloud-upload"></span>&lt;== Sample button!</a>
+                <hr>
+
+                <div id="bookmark-list" onload="App.bookmarkExplorer.showBookmarks();">
+
+                </div>
+
             </section>
+
+
         </div>
         <div id="bookmark-dialog" class="col-md-8">
             <!-- Your dialogs will get appended here -->
@@ -36,5 +50,6 @@
 <script src="assets/lib/handlebars/handlebars.min.js"></script>
 <script src="assets/javascript/templates.js"></script>
 <script src="assets/javascript/script.js"></script>
+<script>window.onload = App.bookmarkExplorer.showBookmarks();</script>
 </body>
 </html>
