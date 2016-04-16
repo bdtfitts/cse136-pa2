@@ -432,3 +432,11 @@ bm-upload-file-dialog .drag-and-drop-container {
     padding: 1em;
     border-radius: .5em;
 }
+
+colors {
+    color: rgba(97, 84, 161, 100);
+    color: rgba(107, 196, 165, 100);
+    color: rgba(75, 75, 96, 100);
+    color: rgba(122, 177, 223, 100);
+    color: rgba(57, 120, 159, 100);
+}
