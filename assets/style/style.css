@@ -20,7 +20,7 @@
 
 html, body {
     font-size: 10px;
-    font-family: "Titillium Web"
+    font-family: "Titillium Web";
 }
 
 a {
@@ -409,6 +409,7 @@ bm-dialog-close span[onclick] {
 bm-dialog-body {
     display: flex;
     flex-flow: row wrap;
+    width: 100%;
 }
 
 bm-dialog-close .span {
@@ -581,7 +582,13 @@ bm-upload-file-dialog .drag-and-drop-container {
 :-moz-placeholder { font-size: larger; }
 :-ms-input-placeholder { font-size: larger; }
 
-/* 8. Edit Forms */
+bm-edit-dialog form, bm-create-dialog form {
+    width: 100%;
+}
+
+bm-edit-dialog form, bm-create-dialog form {
+    text-align: center;
+}
 
 bm-edit-dialog form input, bm-create-dialog form input {
     border: 0.1em solid #ccc;
@@ -590,10 +597,18 @@ bm-edit-dialog form input, bm-create-dialog form input {
     line-height: 1.5em;
     letter-spacing: .01em;
     background-color:  rgba(57, 120, 159, 100);
+    width: 100%;
 }
 
 textarea {
     border: 0.1em solid #ccc;
     border-radius: 0.5em;
     background-color: rgba(57, 120, 159, 100);
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%
 }
+
+
