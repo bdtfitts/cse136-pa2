@@ -52,12 +52,32 @@
                 children: []
             }, {
                 parent: 'root',
+                name: 'Hightimes',
+                url: 'hhttp://www.hightimes.com/',
+                children: []
+            }, {
+                parent: 'root',
+                name: 'School',
+                url: 'sdklnjln',
+                children: []
+            }, {
+                parent: 'root',
                 name: 'Node JS',
                 url: 'https://nodejs.org/en/',
                 children: []
             }, {
                 parent: 'root',
-                name: 'school',
+                name: 'Some other page',
+                url: 'https://nodejs.org/en/',
+                children: []
+            },{
+                parent: 'root',
+                name: 'Boring Floderr',
+                url: '',
+                children: []
+            }, {
+                parent: 'root',
+                name: 'XXX',
                 url: '',
                 children: []
             }]

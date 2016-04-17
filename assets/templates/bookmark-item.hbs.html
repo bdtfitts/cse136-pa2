@@ -1,8 +1,9 @@
-<div style=" background-color: rgba(57, 120, 159, 100);">
-    <p class="bookmark" style="color: white;">
-        <span style="padding: 3px;" class="fa fa-bookmark"></span>
-        <a style="color: white;" href={{url}}>{{name}}</a>
-        <span style="padding: 3px; float: right;" class="fa fa-star" onclick="App.bookmarkExplorer.toggleFavorite(this)"></span>
-        <span style="padding: 3px; float: right;" class="fa fa-edit" onclick="App.bookMarkEdit.show()"></span>
-    </p>
-</div>
+
+<li class="list-item-style">
+    <div class="bookmark-item">
+        <span class="fa fa-bookmark left-item"></span>
+        <a href={{url}}>{{name}}</a>
+        <span class="fa fa-star right-item" onclick="App.bookmarkExplorer.toggleFavorite(this)"></span>
+        <span class="fa fa-edit right-item" onclick="App.bookMarkEdit.show()"></span>
+    </div>
+</li>
