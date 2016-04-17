@@ -611,4 +611,8 @@ textarea {
     width: 100%
 }
 
+bm-edit-dialog form input[type="submit"], bm-create-dialog form input[type="submit"] {
+    margin-top: 4em;
+}
+
 
