@@ -516,18 +516,3 @@ colors {
     color: rgba(122, 177, 223, 100);
     color: rgba(57, 120, 159, 100);
 }
-
-
-/*Abbas Additions*/
-.bookmark:hover {
-    cursor: pointer;
-}
-
-
-@font-face {
-    font-family: 'Titillium Web';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(./fonts/Titillium_Web/7XUFZ5tgS-tD6QamInJTcZ_o9VAbKgK36i-4snuAuCM.woff) format('woff');
-}
-

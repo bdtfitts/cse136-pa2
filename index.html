@@ -32,28 +32,18 @@
                     </a>
                     <span class="fa fa-cloud-download fa-2x"></span>
                 </div>
-                <h4 class="align-center">Bookmarks</h4>
+
+                <form action="">
+                    <input class="input-style" type="text" name="search" placeholder="Search">
+                    <span style="float: right;" class="fa fa-search"></span>
+                </form>
+
                 <div style="background-color: #A2AEBB"></div>
-                <!--<a style="font-size: 2em" href="javascript: void(0);" onclick="App.bookMarkUploader.show()"><span-->
-                        <!--class="fa fa-cloud-upload"></span>&lt;== Sample button!</a>-->
+
                 <!-- Sample button for add new bookmark should be deleted and replaced later
                      with window explorer buttons -->
-                <div class="search-bar">
-                    <input type="search" placeholder="Search bookmarks...">
-                    <i class="fa fa-search" aria-hidden="true" title="Search"></i>
-                </div>
-                <div class="sort-dropdown">
-                    <form>
-                        <select>
-                            <option>Title</option>
-                            <option>Starred</option>
-                            <option>Created</option>
-                            <option>Last Visited</option>
-                            <option>URL</option>
-                        </select>
-                    </form>
-                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                </div>
+                <br>
+
                 <hr>
 
                 <div id="bookmark-list" onload="App.bookmarkExplorer.showBookmarks();">
@@ -71,11 +61,10 @@
     </div>
 </div>
 
-
-
 <script src="assets/lib/handlebars/handlebars.min.js"></script>
 <script src="assets/javascript/templates.js"></script>
 <script src="assets/javascript/script.js"></script>
 <script>window.onload = App.bookmarkExplorer.showBookmarks();</script>
+
 </body>
 </html>
