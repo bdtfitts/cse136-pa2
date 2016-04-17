@@ -38,9 +38,22 @@
                         <!--class="fa fa-cloud-upload"></span>&lt;== Sample button!</a>-->
                 <!-- Sample button for add new bookmark should be deleted and replaced later
                      with window explorer buttons -->
-                <br>
-                <!--<a style="font-size: 2em" href="javascript: void(0);" onclick="App.bookMarkCreate.show()"><span-->
-                             <!--class="fa fa-plus"></span> Create Bookmark</a>-->
+                <div class="search-bar">
+                    <input type="search" placeholder="Search bookmarks...">
+                    <i class="fa fa-search" aria-hidden="true" title="Search"></i>
+                </div>
+                <div class="sort-dropdown">
+                    <form>
+                        <select>
+                            <option>Title</option>
+                            <option>Starred</option>
+                            <option>Created</option>
+                            <option>Last Visited</option>
+                            <option>URL</option>
+                        </select>
+                    </form>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </div>
                 <hr>
 
                 <div id="bookmark-list" onload="App.bookmarkExplorer.showBookmarks();">
