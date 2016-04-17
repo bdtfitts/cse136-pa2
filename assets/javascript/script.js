@@ -35,8 +35,38 @@
     App.bookmarkExplorer = new BookmarkExplorer();
     App.bookMarkUploader = new BookmarkUploader();
     App.bookMarkCreate = new BookmarkCreate();
+    App.bookMarkEdit = new BookmarkEdit();
 
+
+    /* Mock Bookmark Service*/
+    function getBookmarks() {
+
+        bookmarks = {
+            parent: null,
+            name: 'root',
+            url: '',
+            children: [{
+                parent: 'root',
+                name: 'gmail',
+                url: 'gmail.com',
+                children: []
+            }, {
+                parent: 'root',
+                name: 'github',
+                url: 'github.com',
+                children: []
+            }, {
+                parent: 'root',
+                name: 'school',
+                url: '',
+                children: []
+            }]
+        }
+
+        return bookmarks;
+    };
     
+
     /* Code for bookmark explorer */
     function BookmarkExplorer() {
         this.container = document.getElementById('bookmark-list');
@@ -45,14 +75,15 @@
 
     BookmarkExplorer.prototype.showBookmarks = function showBookmarks() {
         var bookExp = this;
-        var context = ['fuck1', '', 'fuck3', 'fuck4', 'fuck5', '', '']
-        //document.getElementById('bookmark-list').innerHTML += this.template(context);
-        context.forEach(function (element) {
-            if (element) {
-                bookExp.printBookmark({book:element});
+        var bookmarks = getBookmarks();
+        current = bookmarks.children;
+        
+        current.forEach(function (current) {
+            if (current.url) {
+                bookExp.printBookmark(current);
             }
             else{
-                bookExp.printFolder({book:element});
+                bookExp.printFolder(current);
             }
         })
     };
@@ -92,31 +123,27 @@
     BookmarkCreate.prototype.show = function showBookmarkCreate() {
       if(document.getElementsByTagName('bm-create-dialog').length !== 0) return;
       document.getElementById('bookmark-dialog').innerHTML += this.template();
-    }
+    };
 
     BookmarkCreate.prototype.remove = function hideBookmarkCreate() {
       var dialog = document.getElementsByTagName('bm-create-dialog');
       this.container.removeChild(dialog[0]);
+    };
+
+    function BookmarkEdit () {
+        this.container = document.getElementById('bookmark-dialog');
+        this.template = App.templates['assets/templates/bm-edit.hbs.html'];
     }
 
+    BookmarkEdit.prototype.show = function showBookmarkEdit() {
+        if(document.getElementsByTagName('bm-edit-dialog').length !== 0) return;
+        document.getElementById('bookmark-dialog').innerHTML += this.template();
+    };
+
+    BookmarkEdit.prototype.remove = function hideBookmarkEdit() {
+        var dialog = document.getElementsByTagName('bm-edit-dialog');
+        this.container.removeChild(dialog[0]);
+    };
+
+
 })(window);
-
-
-
-var bookmarks = {
-    parent: null,
-    name: 'bar',
-    url: '',
-    children:[
-    {
-        parent: 'bar',
-        name: 'foo',
-        url: '//foo.com',
-        children: []
-    },{
-        parent: 'bar',
-        name: 'baz',
-        url: '//baz.com',
-        children: []
-        }
-    ]}
