@@ -5,6 +5,7 @@
     4. Upload Dialog
     5. Search Bar
     6. Sort Dropdown
+    7. Bookmark explorer
 */
 
 /* 1. Grid */
@@ -362,7 +363,6 @@ bm-app {
 
 .dialog {
     color: #c1bdba;
-    margin-top: 1.4rem;
     margin-bottom: 1.4rem;
     padding: 1em;
     background-color: #4b4b60;
@@ -454,6 +454,7 @@ bm-upload-file-dialog .drag-and-drop-container {
     padding: 0.5em 0.5em;
     position: relative;
 }
+
 .search-bar input {
     width: 100%;
     padding-right: 15%;
@@ -464,19 +465,22 @@ bm-upload-file-dialog .drag-and-drop-container {
     background-color: rgba(75, 75, 96, 100);
     color: rgba(122, 177, 223, 100);
 }
+
 .search-bar input:hover {
     background-color: rgba(97, 84, 161, 100);
 }
+
 .search-bar input:focus {
     background-color: rgba(75, 75, 96, 100);
 }
+
 .search-bar i {
     position: absolute;
     bottom: 0.80em;
     cursor: pointer;
     padding-right: 1.5em;
     color: rgba(122, 177, 223, 100);
-    right: 0em;
+    right: 0;
 }
 
 /* 6. Sort Dropdown */
@@ -485,23 +489,27 @@ bm-upload-file-dialog .drag-and-drop-container {
     width: 50%;
     padding: 0.5em 0.5em;
 }
+
 .sort-dropdown select {
     width: 100%;
-	background-color: rgba(75, 75, 96, 100);
-	color: rgba(122, 177, 223, 100);
-	border-bottom-color: rgba(57, 120, 159, 100);
-	border-top: none;
-	border-right: none;
-	border-left:  none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
+    background-color: rgba(75, 75, 96, 100);
+    color: rgba(122, 177, 223, 100);
+    border-bottom-color: rgba(57, 120, 159, 100);
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
+
 .sort-dropdown select:hover {
     background-color: rgba(97, 84, 161, 100);
 }
+
 .sort-dropdown select:focus {
     background-color: rgba(75, 75, 96, 100);
 }
+
 .sort-dropdown i {
     position: absolute;
     right: 0.5em;
@@ -509,20 +517,43 @@ bm-upload-file-dialog .drag-and-drop-container {
     color: rgba(122, 177, 223, 100);
     cursor: default;
 }
-colors {
-    color: rgba(97, 84, 161, 100);
-    color: rgba(107, 196, 165, 100);
-    color: rgba(75, 75, 96, 100);
-    color: rgba(122, 177, 223, 100);
-    color: rgba(57, 120, 159, 100);
+
+/*colors {*/
+/*color: rgba(97, 84, 161, 100);*/
+/*color: rgba(107, 196, 165, 100);*/
+/*color: rgba(75, 75, 96, 100);*/
+/*color: rgba(122, 177, 223, 100);*/
+/*color: rgba(57, 120, 159, 100);*/
+/*}*/
+
+/* 7. Bookmark explorer */
+
+#bookmark-explorer {
+    box-shadow: .1em .1em .6em rgba(82, 78, 75, 0.59);
 }
 
+#bookmark-actions {
+    padding: .7em;
+}
 
-/*Abbas Additions*/
+#bookmark-actions .action-button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#bookmark-actions .title {
+    display: flex;
+    align-self: center;
+}
+
+#bookmark-actions .title h2 {
+    margin: 0;
+}
+
 .bookmark:hover {
     cursor: pointer;
 }
-
 
 @font-face {
     font-family: 'Titillium Web';

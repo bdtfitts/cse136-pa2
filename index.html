@@ -22,20 +22,29 @@
     <div class="row">
         <div class="col-md-4">
             <section id="bookmark-explorer">
-                <div style="float: right">
-                    <a style="font-size: 2em" href="javascript: void(0);" onclick="App.bookMarkCreate.show()">
-                        <span class="fa fa-plus-square-o"></span>
-                    </a>
-                    <span class="fa fa-folder-o fa-2x"></span>
-                    <a style="font-size: 2em" href="javascript: void(0);" onclick="App.bookMarkUploader.show()">
-                        <span class="fa fa-cloud-upload"></span>
-                    </a>
-                    <span class="fa fa-cloud-download fa-2x"></span>
+                <div id="bookmark-actions" class="row">
+                    <div class="title col-xs-6">
+                        <h2>Explorer</h2>
+                    </div>
+                    <div class="col-xs-6 action-button-group">
+                        <a class="box" href="javascript: void(0);" onclick="App.bookMarkCreate.show()">
+                            <span class="fa fa-plus-square-o fa-2x"></span>
+                        </a>
+                        <a class="box" href="javascript: void(0);">
+                            <span class="fa fa-folder-o fa-2x"></span>
+                        </a>
+                        <a class="box" href="javascript: void(0);" onclick="App.bookMarkUploader.show()">
+                            <span class="fa fa-cloud-upload fa-2x"></span>
+                        </a>
+                        <a class="box" href="javascript: void(0);">
+                            <span class="fa fa-cloud-download fa-2x"></span>
+                        </a>
+                    </div>
                 </div>
-                <h4 class="align-center">Bookmarks</h4>
+
                 <div style="background-color: #A2AEBB"></div>
                 <!--<a style="font-size: 2em" href="javascript: void(0);" onclick="App.bookMarkUploader.show()"><span-->
-                        <!--class="fa fa-cloud-upload"></span>&lt;== Sample button!</a>-->
+                <!--class="fa fa-cloud-upload"></span>&lt;== Sample button!</a>-->
                 <!-- Sample button for add new bookmark should be deleted and replaced later
                      with window explorer buttons -->
                 <div class="search-bar">
@@ -70,7 +79,6 @@
 
     </div>
 </div>
-
 
 
 <script src="assets/lib/handlebars/handlebars.min.js"></script>
