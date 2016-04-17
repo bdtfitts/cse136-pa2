@@ -125,6 +125,21 @@
         hide('bm-create-dialog');
     };
 
+    function BookmarkEdit () {
+        this.container = document.getElementById('bookmark-dialog');
+        this.template = App.templates['assets/templates/bm-edit.hbs.html'];
+    }
+
+    BookmarkEdit.prototype.show = function showBookmarkEdit() {
+        if(document.getElementsByTagName('bm-edit-dialog').length !== 0) return;
+        document.getElementById('bookmark-dialog').innerHTML += this.template();
+    };
+
+    BookmarkEdit.prototype.remove = function hideBookmarkEdit() {
+        var dialog = document.getElementsByTagName('bm-edit-dialog');
+        this.container.removeChild(dialog[0]);
+    };
+
     function BookmarkEdit() {
         this.template = App.templates['assets/templates/bm-edit.hbs.html'];
     }
