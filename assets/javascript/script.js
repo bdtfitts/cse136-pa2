@@ -47,13 +47,13 @@
             url: '',
             children: [{
                 parent: 'root',
-                name: 'Python Tutorial',
-                url: 'http://www.fromdev.com/2014/03/python-tutorials-resources.html',
+                name: 'gmail',
+                url: 'gmail.com',
                 children: []
             }, {
                 parent: 'root',
-                name: 'Node JS',
-                url: 'https://nodejs.org/en/',
+                name: 'github',
+                url: 'github.com',
                 children: []
             }, {
                 parent: 'root',
@@ -68,42 +68,36 @@
 
     /* Code for bookmark explorer */
     function BookmarkExplorer() {
-        this.container      = document.getElementById('bookmark-list');
-        this.itemTemplate   = App.templates['assets/templates/bookmark-item.hbs.html'];
-        this.folderTemplate = App.templates['assets/templates/bookmark-folder.hbs.html'];
+        this.container = document.getElementById('bookmark-list');
+        //this.template = App.templates['assets/templates/bookmark-list.hbs.html'];
     }
 
     BookmarkExplorer.prototype.showBookmarks = function showBookmarks() {
-
-        var bookExp = this;
+        var bookExp   = this;
         var bookmarks = getBookmarks();
-        current = bookmarks.children;
+        var current   = bookmarks.children;
 
         current.forEach(function (current) {
-            if (current.url) {
-                printBookmarkListItem(bookExp.container, bookExp.itemTemplate, current);
+            if (current.url)
+            {
+                bookExp.printBookmark(current);
             }
-            else{
-                printBookmarkListItem(bookExp.container, bookExp.folderTemplate, current);
+            else
+            {
+                bookExp.printFolder(current);
             }
         })
     };
 
-    BookmarkExplorer.prototype.toggleFavorite = function toggleFavorite (ele) {
-        if(ele.classList.contains("fa-star-o")) {
-            ele.classList.toggle("fa-star-o");
-            ele.classList.add("fa-star")
-        }
-        else {
-            ele.classList.toggle("fa-star");
-            ele.classList.add("fa-star-o")   
-        }
+    BookmarkExplorer.prototype.printBookmark = function printBookmark(context) {
+        this.template = App.templates['assets/templates/bookmark-item.hbs.html'];
+        document.getElementById('bookmark-list').innerHTML += this.template(context);
     };
 
-     function printBookmarkListItem(container, template, context) {
-         container.innerHTML += template(context);
-    }
-
+    BookmarkExplorer.prototype.printFolder = function printFolder(context) {
+        this.template = App.templates['assets/templates/bookmark-folder.hbs.html'];
+        document.getElementById('bookmark-list').innerHTML += this.template(context);
+    };
 
     /* Bookmark uploader */
     function BookmarkUploader() {
