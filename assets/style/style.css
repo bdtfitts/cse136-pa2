@@ -12,6 +12,7 @@
 
 html, body {
     font-size: 10px;
+    font-family: "Titillium Web"
 }
 
 a {
@@ -400,10 +401,10 @@ bm-dialog-close .span {
 }
 
 bm-create-dialog,
-bm-upload-file-dialog {
+bm-upload-file-dialog, bm-edit-dialog {
     display: flex;
     flex-flow: row wrap;
-    height: 23em;
+    height: auto;
 }
 
 bm-upload-file-dialog .drag-and-drop-inner p {
@@ -440,3 +441,18 @@ colors {
     color: rgba(122, 177, 223, 100);
     color: rgba(57, 120, 159, 100);
 }
+
+
+/*Abbas Additions*/
+.bookmark:hover {
+    cursor: pointer;
+}
+
+
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(./fonts/Titillium_Web/7XUFZ5tgS-tD6QamInJTcZ_o9VAbKgK36i-4snuAuCM.woff) format('woff');
+}
+

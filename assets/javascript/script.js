@@ -35,6 +35,7 @@
     App.bookmarkExplorer = new BookmarkExplorer();
     App.bookMarkUploader = new BookmarkUploader();
     App.bookMarkCreate = new BookmarkCreate();
+    App.bookMarkEdit = new BookmarkEdit();
 
 
     /* Mock Bookmark Service*/
@@ -127,6 +128,21 @@
     BookmarkCreate.prototype.remove = function hideBookmarkCreate() {
       var dialog = document.getElementsByTagName('bm-create-dialog');
       this.container.removeChild(dialog[0]);
+    };
+
+    function BookmarkEdit () {
+        this.container = document.getElementById('bookmark-dialog');
+        this.template = App.templates['assets/templates/bm-edit.hbs.html'];
+    }
+
+    BookmarkEdit.prototype.show = function showBookmarkEdit() {
+        if(document.getElementsByTagName('bm-edit-dialog').length !== 0) return;
+        document.getElementById('bookmark-dialog').innerHTML += this.template();
+    };
+
+    BookmarkEdit.prototype.remove = function hideBookmarkEdit() {
+        var dialog = document.getElementsByTagName('bm-edit-dialog');
+        this.container.removeChild(dialog[0]);
     };
 
 
