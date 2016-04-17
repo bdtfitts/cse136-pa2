@@ -29,19 +29,19 @@
 /* Classes for elements - Everything gets attached to App class */
 (function () {
 
-    this['App']  = this['App'] || {};
-    var App      = this['App'];
+    this['App']         = this['App'] || {};
+    var App             = this['App'];
+    var dialogContainer = document.getElementById('bookmark-dialog');
 
     App.bookmarkExplorer = new BookmarkExplorer();
     App.bookMarkUploader = new BookmarkUploader();
-    App.bookMarkCreate = new BookmarkCreate();
-    App.bookMarkEdit = new BookmarkEdit();
-
+    App.bookMarkCreate   = new BookmarkCreate();
+    App.bookMarkEdit     = new BookmarkEdit();
 
     /* Mock Bookmark Service*/
     function getBookmarks() {
 
-        bookmarks = {
+        var bookmarks = {
             parent: null,
             name: 'root',
             url: '',
@@ -61,11 +61,10 @@
                 url: '',
                 children: []
             }]
-        }
+        };
 
         return bookmarks;
-    };
-
+    }
 
     /* Code for bookmark explorer */
     function BookmarkExplorer() {
@@ -108,34 +107,28 @@
 
     /* Bookmark uploader */
     function BookmarkUploader() {
-        this.container = document.getElementById('bookmark-dialog');
-        this.template = App.templates['assets/templates/upload-file.hbs.html'];
+        this.template  = App.templates['assets/templates/upload-file.hbs.html'];
     }
 
     BookmarkUploader.prototype.show = function showBookmarkUploader() {
-        if (document.getElementsByTagName('bm-upload-file-dialog').length !== 0) return;
-        document.getElementById('bookmark-dialog').innerHTML += this.template();
+        show('bm-upload-file-dialog', this.template);
     };
 
     BookmarkUploader.prototype.remove = function hideBookmarkUploader() {
-        var dialog = document.getElementsByTagName('bm-upload-file-dialog');
-        this.container.removeChild(dialog[0]);
+        hide('bm-upload-file-dialog');
     };
 
     /* Bookmark create */
     function BookmarkCreate() {
-      this.container = document.getElementById('bookmark-dialog');
-      this.template = App.templates['assets/templates/bm-create.hbs.html'];
+        this.template  = App.templates['assets/templates/bm-create.hbs.html'];
     }
 
     BookmarkCreate.prototype.show = function showBookmarkCreate() {
-      if(document.getElementsByTagName('bm-create-dialog').length !== 0) return;
-      document.getElementById('bookmark-dialog').innerHTML += this.template();
+        show('bm-create-dialog', this.template);
     };
 
     BookmarkCreate.prototype.remove = function hideBookmarkCreate() {
-      var dialog = document.getElementsByTagName('bm-create-dialog');
-      this.container.removeChild(dialog[0]);
+        hide('bm-create-dialog');
     };
 
     function BookmarkEdit () {
@@ -153,5 +146,59 @@
         this.container.removeChild(dialog[0]);
     };
 
+    function BookmarkEdit() {
+        this.template = App.templates['assets/templates/bm-edit.hbs.html'];
+    }
+
+    BookmarkEdit.prototype.show = function showBookmarkEdit() {
+        show('bm-edit-dialog', this.template);
+    };
+
+    BookmarkEdit.prototype.remove = function hideBookmarkEdit() {
+        hide('bm-edit-dialog');
+    };
+
+    /* Show hide functionality */
+    function hide(tag) {
+        var elements = document.getElementsByTagName(tag);
+        /* Check if element is present */
+        if (elements.length !== 0)
+        {
+            var element = elements[0];
+            element.style.display = 'none';
+        }
+    }
+
+    function show(tag, template) {
+        var elements = document.getElementsByTagName(tag);
+        /* Check if element is present */
+        if (elements.length !== 0)
+        {
+            var element = elements[0];
+            /* Check if element is shown */
+            if (getDisplay(element) === 'none')
+            {
+                displayAsFirstChild(element);
+            }
+
+            return;
+        }
+
+        /* Inserts html as first child element */
+        dialogContainer.insertAdjacentHTML('afterbegin', template());
+    }
+
+    function displayAsFirstChild (element) {
+        var firstChild = dialogContainer.firstChild;
+
+        /* Shows element as the first child */
+        dialogContainer.insertBefore(element, firstChild);
+        element.style.display = 'flex';
+    }
+
+    function getDisplay(element) {
+        return element.currentStyle ? element.currentStyle.display :
+               getComputedStyle(element, null).display;
+    }
 
 })(window);
