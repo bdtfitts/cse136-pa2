@@ -1,10 +1,10 @@
-<div style=" background-color: rgba(57, 120, 159, 100); border-color: white;">
-    <li style="color: white; border: 1px solid white; border-radius: 1%">
+<div style=" background-color: rgba(57, 120, 159, 100);">
+    <p class="bookmark" style="color: white;">
         <span style="padding: 3px;" class="fa fa-bookmark"></span>
         <a style="color: white;"  href={{url}}>{{name}}</a>
 
         <span style="padding: 3px; float: right;" class="fa fa-star"></span>
         <span style="padding: 3px; float: right; display: none" class="fa fa-star-o"></span>
-        <span style="padding: 3px; float: right;" class="fa fa-edit"></span>
-    </li>
+        <span style="padding: 3px; float: right;" class="fa fa-edit" onclick="App.bookMarkEdit.show()"></span>
+    </p>
 </div>
