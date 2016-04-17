@@ -4,6 +4,7 @@
     3. Page header
     4. Upload Dialog
     5. Search Bar
+    6. Sort Dropdown
 */
 
 /* 1. Grid */
@@ -443,15 +444,44 @@ bm-upload-file-dialog .drag-and-drop-container {
 .search-bar input {
     width: 100%;
     padding-right: 15%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: rgb(57, 120, 159);
+    background-color: rgba(75, 75, 96, 100);
+    color: rgba(122, 177, 223, 100);
 }
 .search-bar i {
     position: absolute;
-    bottom: 0.75em;
+    bottom: 0.70em;
     cursor: pointer;
     padding-right: 1.5em;
-    right: 0.5em;
+    color: rgba(122, 177, 223, 100);
+    right: 0em;
 }
 
+/* 6. Sort Dropdown */
+.sort-dropdown {
+    position: relative;
+    width: 50%;
+    padding: 0.5em 0.5em;
+}
+.sort-dropdown select {
+    width: 100%;
+	background-color: rgb(75, 75, 96);
+	color: rgb(122, 177, 223);
+	border-bottom-color: rgb(57, 120, 159);
+	border-top: none;
+	border-right: none;
+	border-left:  none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+.sort-dropdown i {
+    position: absolute;
+    right: 0.5em;
+    color: rgba(122, 177, 223, 100);
+}
 colors {
     color: rgba(97, 84, 161, 100);
     color: rgba(107, 196, 165, 100);
