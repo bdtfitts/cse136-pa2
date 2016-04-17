@@ -448,13 +448,19 @@ bm-upload-file-dialog .drag-and-drop-container {
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom-color: rgb(57, 120, 159);
+    border-bottom-color: rgba(57, 120, 159, 100);
     background-color: rgba(75, 75, 96, 100);
     color: rgba(122, 177, 223, 100);
 }
+.search-bar input:hover {
+    background-color: rgba(97, 84, 161, 100);
+}
+.search-bar input:focus {
+    background-color: rgba(75, 75, 96, 100);
+}
 .search-bar i {
     position: absolute;
-    bottom: 0.70em;
+    bottom: 0.80em;
     cursor: pointer;
     padding-right: 1.5em;
     color: rgba(122, 177, 223, 100);
@@ -469,20 +475,27 @@ bm-upload-file-dialog .drag-and-drop-container {
 }
 .sort-dropdown select {
     width: 100%;
-	background-color: rgb(75, 75, 96);
-	color: rgb(122, 177, 223);
-	border-bottom-color: rgb(57, 120, 159);
+	background-color: rgba(75, 75, 96, 100);
+	color: rgba(122, 177, 223, 100);
+	border-bottom-color: rgba(57, 120, 159, 100);
 	border-top: none;
 	border-right: none;
 	border-left:  none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 }
+.sort-dropdown select:hover {
+    background-color: rgba(97, 84, 161, 100);
+}
+.sort-dropdown select:focus {
+    background-color: rgba(75, 75, 96, 100);
+}
 .sort-dropdown i {
     position: absolute;
     right: 0.5em;
     bottom: 0.80em;
     color: rgba(122, 177, 223, 100);
+    cursor: default;
 }
 colors {
     color: rgba(97, 84, 161, 100);
