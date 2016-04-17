@@ -440,3 +440,8 @@ colors {
     color: rgba(122, 177, 223, 100);
     color: rgba(57, 120, 159, 100);
 }
+
+.input-style {
+    padding-top: 35px;
+    height: 50px;
+}

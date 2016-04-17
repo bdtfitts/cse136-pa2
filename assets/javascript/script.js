@@ -46,13 +46,13 @@
             url: '',
             children: [{
                 parent: 'root',
-                name: 'gmail',
-                url: 'gmail.com',
+                name: 'Python Tutorial',
+                url: 'http://www.fromdev.com/2014/03/python-tutorials-resources.html',
                 children: []
             }, {
                 parent: 'root',
-                name: 'github',
-                url: 'github.com',
+                name: 'Node JS',
+                url: 'https://nodejs.org/en/',
                 children: []
             }, {
                 parent: 'root',
@@ -64,7 +64,7 @@
 
         return bookmarks;
     };
-    
+
 
     /* Code for bookmark explorer */
     function BookmarkExplorer() {
