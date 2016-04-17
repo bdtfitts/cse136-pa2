@@ -415,6 +415,10 @@ bm-upload-file-dialog, bm-edit-dialog {
     height: auto;
 }
 
+bm-upload-file-dialog {
+    height: 28em;
+}
+
 bm-upload-file-dialog .drag-and-drop-inner p {
     margin: .2em;
 }
