@@ -6,6 +6,7 @@
     5. Search Bar
     6. Sort Dropdown
     7. Bookmark explorer
+    8. Edit Forms
 */
 
 /* 1. Grid */
@@ -559,5 +560,23 @@ bm-upload-file-dialog .drag-and-drop-container {
     font-family: 'Titillium Web';
     font-style: normal;
     font-weight: 400;
-    src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(./fonts/Titillium_Web/7XUFZ5tgS-tD6QamInJTcZ_o9VAbKgK36i-4snuAuCM.woff) format('woff');
+    src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(./fonts/Titillium_Web.woff) format('woff');
+}
+
+
+/* 8. Edit Forms */
+
+bm-edit-dialog form input, bm-create-dialog form input {
+    border: 0.1em solid #ccc;
+    border-radius: 0.5em;
+    padding: 1%;
+    line-height: 1.5em;
+    letter-spacing: .01em;
+    background-color: cornsilk;
+}
+
+textarea {
+    border: 0.1em solid #ccc;
+    border-radius: 0.5em;
+    background-color: cornsilk;
 }
