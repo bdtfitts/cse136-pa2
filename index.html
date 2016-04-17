@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="assets/lib/components-font-awesome/css/font-awesome.min.css">
+
 </head>
 <body>
 
@@ -22,21 +23,21 @@
         <div class="col-md-4">
             <section id="bookmark-explorer">
                 <div style="float: right">
-                    <span class="fa fa-plus-square-o"></span>
-                    <span class="fa fa-folder-o"></span>
-                    <span class="fa fa-cloud-upload"></span>
-                    <span class="fa fa-cloud-download"></span>
+                    <a style="font-size: 2em" href="javascript: void(0);" onclick="App.bookMarkCreate.show()">
+                        <span class="fa fa-plus-square-o"></span>
+                    </a>
+                    <span class="fa fa-folder-o fa-2x"></span>
+                    <a style="font-size: 2em" href="javascript: void(0);" onclick="App.bookMarkUploader.show()">
+                        <span class="fa fa-cloud-upload"></span>
+                    </a>
+                    <span class="fa fa-cloud-download fa-2x"></span>
                 </div>
                 <h4 class="align-center">Bookmarks</h4>
                 <div style="background-color: #A2AEBB"></div>
-                <a style="font-size: 2em" href="javascript: void(0);" onclick="App.bookMarkUploader.show()"><span
-                        class="fa fa-cloud-upload"></span>&lt;== Sample button!</a>
+                <!--<a style="font-size: 2em" href="javascript: void(0);" onclick="App.bookMarkUploader.show()"><span-->
+                        <!--class="fa fa-cloud-upload"></span>&lt;== Sample button!</a>-->
                 <!-- Sample button for add new bookmark should be deleted and replaced later
                      with window explorer buttons -->
-                <br>
-                <a style="font-size: 2em" href="javascript: void(0);" onclick="App.bookMarkCreate.show()"><span
-                             class="fa fa-plus"></span> Create Bookmark</a>
-                <br>
                 <div class="search-bar">
                     <input type="search" placeholder="Search bookmarks...">
                     <i class="fa fa-search" aria-hidden="true" title="Search"></i>
@@ -64,8 +65,11 @@
         <div id="bookmark-dialog" class="col-md-8">
             <!-- Your dialogs will get appended here -->
         </div>
+
     </div>
 </div>
+
+
 
 <script src="assets/lib/handlebars/handlebars.min.js"></script>
 <script src="assets/javascript/templates.js"></script>
