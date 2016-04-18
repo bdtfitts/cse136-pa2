@@ -72,7 +72,7 @@
                 children: []
             }, {
                 parent: 'root',
-                name: 'Boring Floderr',
+                name: 'Exciting Stuff',
                 url: '',
                 children: [{
                     parent: 'root',
@@ -140,7 +140,6 @@
             current = bookmarks.children;
         }
         else {
-            
             current = bookmarks.children[5].children;
             printBookmarkListItem(bookExp.container, bookExp.subFolderBack, {});
         }
