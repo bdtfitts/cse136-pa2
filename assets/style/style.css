@@ -583,7 +583,7 @@ bm-upload-file-dialog .drag-and-drop-container {
 
 bm-edit-dialog, bm-create-dialog {
     width: 100%;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 bm-edit-dialog bm-dialog-body, bm-create-dialog bm-dialog-body {
@@ -606,9 +606,6 @@ bm-edit-dialog bm-dialog-body, bm-create-dialog bm-dialog-body {
     float:left;
 }
 
-/*#x {*/
-    /*float: right;*/
-/*}*/
 
 
 
@@ -645,7 +642,8 @@ bm-edit-dialog form input[type="submit"], bm-create-dialog form input[type="subm
     width: 80px;
     margin: auto;
     text-align: center;
-    /*margin-left: ;*/
+    padding-right: 0;
+    padding-left: 2em;
 }
 
 
