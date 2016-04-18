@@ -671,30 +671,57 @@ bm-edit-dialog form input[type="submit"], bm-create-dialog form input[type="subm
 
 /* Bookmark Explorer */
 
+#bookmark-list {
+    margin-top: 0;
+    padding-left: 0;
+}
+
 ul
 {
     list-style-type: none;
-    position: relative;
-    right: 25px;
+    /*position: relative;*/
+    /*right: 25px;*/
 
 }
 
-li {
+.list-item-style {
     border-bottom: 1px solid #c1bdba;
-    position: relative;
+    /*position: relative;*/
+    padding: 0;
+    min-height: 20px;
+}
 
+a.bookmark-link:link {
+    color: rgba(57, 120, 159, 100);
+}
 
+a.bookmark-link:visited {
+    color: rgba(57, 120, 159, 100);
 }
 
 .bookmark-item {
-padding: 3px;
+    padding: .5em;
+    height: 100%;
+    display: flex;
+    /* align-self: center; */
+    /* align-content: inherit; */
+    align-items: center;
+    /* justify-content: space-between; */
 }
 
-.right-item {
-    padding: 3px;
-    float: right;
-    position: relative;
-    left: 10px;
+/*.right-item {*/
+    /*padding: 3px;*/
+    /*float: right;*/
+    /*position: relative;*/
+    /*left: 10px;*/
 
+/*}*/
+
+.left-item {
+    padding: 3px;
+}
+
+.folder-icon {
+    color: rgba(107, 196, 165, 100);
 }
 
