@@ -581,13 +581,38 @@ bm-upload-file-dialog .drag-and-drop-container {
 :-moz-placeholder { font-size: larger; }
 :-ms-input-placeholder { font-size: larger; }
 
-bm-edit-dialog form, bm-create-dialog form {
+bm-edit-dialog, bm-create-dialog {
     width: 100%;
-}
-
-bm-edit-dialog form, bm-create-dialog form {
     text-align: center;
 }
+
+bm-edit-dialog bm-dialog-body, bm-create-dialog bm-dialog-body {
+    margin: auto;
+    position: relative;
+}
+
+#titleCol {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+#keywordsCol {
+    margin-right: 0px;
+    padding-right: 0px;
+}
+
+#title, #keywords, #url, #description {
+    margin-bottom:.2em;
+    float:left;
+}
+
+/*#x {*/
+    /*float: right;*/
+/*}*/
+
+
+
+
 
 bm-edit-dialog form input, bm-create-dialog form input {
     border: 0.1em solid #ccc;
@@ -597,9 +622,10 @@ bm-edit-dialog form input, bm-create-dialog form input {
     letter-spacing: .01em;
     background-color:  rgba(57, 120, 159, 100);
     width: 100%;
+    margin-bottom: .5em;
 }
 
-textarea {
+bm-edit-dialog form textarea, bm-create-dialog form textarea {
     border: 0.1em solid #ccc;
     border-radius: 0.5em;
     background-color: rgba(57, 120, 159, 100);
@@ -609,27 +635,17 @@ textarea {
     box-sizing: border-box;
     width: 100%;
     font-size: .9em;
+    height: 5em;
+    margin-bottom: 1.5em;
 
 }
 
 bm-edit-dialog form input[type="submit"], bm-create-dialog form input[type="submit"] {
     margin-top: 4em;
-    margin-left: 3em;
-}
-
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    black;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:     black;
-    opacity:  1;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    black;
-    opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: black;
+    width: 80px;
+    margin: auto;
+    text-align: center;
+    /*margin-left: ;*/
 }
 
 
@@ -643,7 +659,7 @@ bm-edit-dialog form input[type="submit"], bm-create-dialog form input[type="subm
         margin-top: 0em;
     }
 
-    textarea {
+    bm-edit-dialog form textarea {
         margin-left: 2.3em;
     }
 
