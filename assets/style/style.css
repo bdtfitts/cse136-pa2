@@ -707,7 +707,12 @@ a.bookmark-link:hover {
 }
 
 .bookmark-icons {
+    padding-right: 1em;
     color: rgba(57, 120, 159, 100);
+}
+
+.edit-favorite-icons {
+    padding-left: 1em;
 }
 
 .folder-text {
