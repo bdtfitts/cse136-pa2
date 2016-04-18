@@ -20,7 +20,7 @@
 
 html, body {
     font-size: 10px;
-    font-family: "Titillium Web"
+    font-family: "Titillium Web";
 }
 
 a {
@@ -573,13 +573,99 @@ bm-upload-file-dialog .drag-and-drop-container {
     font-family: 'Titillium Web';
     font-style: normal;
     font-weight: 400;
-    src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(./fonts/Titillium_Web/7XUFZ5tgS-tD6QamInJTcZ_o9VAbKgK36i-4snuAuCM.woff) format('woff');
+    src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(./fonts/Titillium_Web.woff) format('woff');
 }
 
 /* 8. Forms */
 ::-webkit-input-placeholder { font-size: larger; }
 :-moz-placeholder { font-size: larger; }
 :-ms-input-placeholder { font-size: larger; }
+
+bm-edit-dialog, bm-create-dialog {
+    width: 100%;
+    /*text-align: center;*/
+}
+
+bm-edit-dialog bm-dialog-body, bm-create-dialog bm-dialog-body {
+    margin: auto;
+    position: relative;
+}
+
+#titleCol {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+#keywordsCol {
+    margin-right: 0px;
+    padding-right: 0px;
+}
+
+#title, #keywords, #url, #description {
+    margin-bottom:.2em;
+    float:left;
+}
+
+
+
+
+
+
+bm-edit-dialog form input, bm-create-dialog form input {
+    border: 0.1em solid #ccc;
+    border-radius: 0.5em;
+    padding: 1%;
+    line-height: 1.5em;
+    letter-spacing: .01em;
+    background-color:  rgba(57, 120, 159, 100);
+    width: 100%;
+    margin-bottom: .5em;
+}
+
+bm-edit-dialog form textarea, bm-create-dialog form textarea {
+    border: 0.1em solid #ccc;
+    border-radius: 0.5em;
+    background-color: rgba(57, 120, 159, 100);
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: .9em;
+    height: 5em;
+    margin-bottom: 1.5em;
+
+}
+
+bm-edit-dialog form input[type="submit"], bm-create-dialog form input[type="submit"] {
+    margin-top: 4em;
+    width: 80px;
+    margin: auto;
+    text-align: center;
+    padding-right: 0;
+    padding-left: 2em;
+}
+
+
+@media screen and (max-width: 48em) {
+    bm-edit-dialog form input, bm-create-dialog form input {
+        margin-left: 3em;
+        margin-top: 0em;
+    }
+
+    bm-edit-dialog form input[type="submit"], bm-create-dialog form input[type="submit"] {
+        margin-top: 0em;
+    }
+
+    bm-edit-dialog form textarea {
+        margin-left: 2.3em;
+    }
+
+    bm-edit-dialog form p, bm-create-dialog form p {
+        margin-left: 1em;
+        margin-top: 1em;
+    }
+}
 
 /* Bookmark Explorer */
 
