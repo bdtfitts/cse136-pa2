@@ -723,3 +723,7 @@ a.bookmark-link:hover {
     display: flex;
     justify-content: space-between;
 }
+
+.hand {
+    cursor: pointer;
+}
