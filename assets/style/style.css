@@ -530,13 +530,13 @@ bm-upload-file-dialog .drag-and-drop-container {
     cursor: default;
 }
 
-colors {
-color: rgba(97, 84, 161, 100);
-color: rgba(107, 196, 165, 100);
-color: rgba(75, 75, 96, 100);
-color: rgba(122, 177, 223, 100);
-color: rgba(57, 120, 159, 100);
-}
+/*colors {*/
+/*color: rgba(97, 84, 161, 100);*/
+/*color: rgba(107, 196, 165, 100);*/
+/*color: rgba(75, 75, 96, 100);*/
+/*color: rgba(122, 177, 223, 100);*/
+/*color: rgba(57, 120, 159, 100);*/
+/*}*/
 
 /* 7. Bookmark explorer */
 
@@ -583,17 +583,23 @@ color: rgba(57, 120, 159, 100);
 
 /* Bookmark Explorer */
 
+#bookmark-list {
+    margin-top: 0;
+    padding-left: 0;
+}
+
 ul
 {
     list-style-type: none;
-    position: relative;
-    right: 25px;
+    /*position: relative;*/
+    /*right: 25px;*/
 
 }
 
 .list-item-style {
     border-bottom: 1px solid #c1bdba;
-    position: relative;
+    /*position: relative;*/
+    padding: 0;
     min-height: 20px;
 }
 
@@ -606,16 +612,22 @@ a.bookmark-link:visited {
 }
 
 .bookmark-item {
-
+    padding: .5em;
+    height: 100%;
+    display: flex;
+    /* align-self: center; */
+    /* align-content: inherit; */
+    align-items: center;
+    /* justify-content: space-between; */
 }
 
-.right-item {
-    padding: 3px;
-    float: right;
-    position: relative;
-    left: 10px;
+/*.right-item {*/
+    /*padding: 3px;*/
+    /*float: right;*/
+    /*position: relative;*/
+    /*left: 10px;*/
 
-}
+/*}*/
 
 .left-item {
     padding: 3px;
