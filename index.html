@@ -21,7 +21,7 @@
 <div id="app-content" class="container" style="height: 64em;">
     <div class="row">
         <div class="col-md-4">
-            <section id="bookmark-explorer">
+            <div id="bookmark-explorer">
                 <div id="bookmark-actions">
                     <div class="action-button-group">
                         <a class="box" href="javascript: void(0);" onclick="App.bookMarkCreate.show()">
@@ -33,7 +33,8 @@
                         <a class="box" href="javascript: void(0);" onclick="App.bookMarkUploader.show()">
                             <span class="fa fa-cloud-upload"></span>
                         </a>
-                        <a class="box" href="javascript: void(0);">
+                        <a class="box" href="bookmark-export.csv" download>
+
                             <span class="fa fa-cloud-download"></span>
                         </a>
                     </div>
@@ -66,7 +67,7 @@
 
                     </ul>
                 </div>
-            </section>
+            </div>
 
 
         </div>

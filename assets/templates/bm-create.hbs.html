@@ -2,15 +2,28 @@
   <bm-dialog-close><span onclick="App.bookMarkCreate.remove()" class="fa fa-times"></span></bm-dialog-close>
   <bm-dialog-body class="drag-and-drop-container">
     <form>
-      <p>Title: </p>
-      <input type = "text" name = "title"><br>
-      <p>Url: </p>
-      <input type = "url" name = "url"><br>
-      <p>Description: </p>
-      <textarea rows = "3"></textarea>
-      <p>Keywords: </p>
-      <input type = "text" name = "keywords"><br>
-      <input type = "submit">
+      <div class="row form_row">
+        <div class="col-lg-5 col-md-5" id="titleCol">
+          <p id="title">Title</p>
+          <input type = "text" name = "title"><br>
+        </div>
+        <div class="'col-lg-2 col-md-2"></div>
+        <div class="col-lg-5 col-md-5" id="keywordsCol">
+          <p id="keywords">Keywords</p>
+          <input type = "text" name = "keywords"><br>
+        </div>
+      </div>
+      <div class="row form_row">
+        <p id="url">Url</p>
+        <input type = "url" name = "url"><br>
+      </div>
+
+      <div class="row">
+        <p id="description">Description</p>
+        <textarea rows = "3"></textarea>
+      </div>
+
+      <input class="row" type = "submit">
     </form>
   </bm-dialog-body>
 </bm-create-dialog>
