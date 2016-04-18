@@ -70,15 +70,50 @@
                 name: 'Some other page',
                 url: 'https://nodejs.org/en/',
                 children: []
-            },{
+            }, {
                 parent: 'root',
                 name: 'Boring Floderr',
                 url: '',
-                children: []
+                children: [{
+                    parent: 'root',
+                    name: 'Apple',
+                    url: 'http://www.fromdev.com/2014/03/python-tutorials-resources.html',
+                    children: []
+                }, {
+                    parent: 'root',
+                    name: 'Google Keep',
+                    url: 'hhttp://www.hightimes.com/',
+                    children: []
+                }, {
+                    parent: 'root',
+                    name: 'Netflix',
+                    url: 'sdklnjln',
+                    children: []
+                }, {
+                    parent: 'root',
+                    name: 'Java',
+                    url: 'https://nodejs.org/en/',
+                    children: []
+                }, {
+                    parent: 'root',
+                    name: 'Ocaml',
+                    url: 'https://nodejs.org/en/',
+                    children: []
+                }, {
+                    parent: 'root',
+                    name: 'Cpp Fourms',
+                    url: 'https://nodejs.org/en/',
+                    children: []
+                }, {
+                    parent: 'root',
+                    name: 'Learn CSS',
+                    url: 'https://nodejs.org/en/',
+                    children: []
+                }]
             }, {
                 parent: 'root',
                 name: 'XXX',
-                url: '',
+                url: 'https://nodejs.org/en/',
                 children: []
             }]
         };
@@ -91,14 +126,25 @@
         this.container      = document.getElementById('bookmark-list');
         this.itemTemplate   = App.templates['assets/templates/bookmark-item.hbs.html'];
         this.folderTemplate = App.templates['assets/templates/bookmark-folder.hbs.html'];
+        this.subFolderBack  = App.templates['assets/templates/bookmark-sub-back.hbs.html'];
     }
 
-    BookmarkExplorer.prototype.showBookmarks = function showBookmarks() {
+    BookmarkExplorer.prototype.showBookmarks = function showBookmarks(reference) {
 
         var bookExp = this;
         var bookmarks = getBookmarks();
-        current = bookmarks.children;
 
+        document.getElementById('bookmark-list').innerHTML = "";
+        
+        if (reference == 'top') {
+            current = bookmarks.children;
+        }
+        else {
+            
+            current = bookmarks.children[5].children;
+            printBookmarkListItem(bookExp.container, bookExp.subFolderBack, {});
+        }
+        
         current.forEach(function (current) {
             if (current.url) {
                 printBookmarkListItem(bookExp.container, bookExp.itemTemplate, current);

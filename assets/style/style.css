@@ -530,13 +530,13 @@ bm-upload-file-dialog .drag-and-drop-container {
     cursor: default;
 }
 
-/*colors {*/
-/*color: rgba(97, 84, 161, 100);*/
-/*color: rgba(107, 196, 165, 100);*/
-/*color: rgba(75, 75, 96, 100);*/
-/*color: rgba(122, 177, 223, 100);*/
-/*color: rgba(57, 120, 159, 100);*/
-/*}*/
+colors {
+color: rgba(97, 84, 161, 100);
+color: rgba(107, 196, 165, 100);
+color: rgba(75, 75, 96, 100);
+color: rgba(122, 177, 223, 100);
+color: rgba(57, 120, 159, 100);
+}
 
 /* 7. Bookmark explorer */
 
@@ -591,15 +591,22 @@ ul
 
 }
 
-li {
+.list-item-style {
     border-bottom: 1px solid #c1bdba;
     position: relative;
+    min-height: 20px;
+}
 
+a.bookmark-link:link {
+    color: rgba(57, 120, 159, 100);
+}
 
+a.bookmark-link:visited {
+    color: rgba(57, 120, 159, 100);
 }
 
 .bookmark-item {
-padding: 3px;
+
 }
 
 .right-item {
@@ -608,5 +615,13 @@ padding: 3px;
     position: relative;
     left: 10px;
 
+}
+
+.left-item {
+    padding: 3px;
+}
+
+.folder-icon {
+    color: rgba(107, 196, 165, 100);
 }
 

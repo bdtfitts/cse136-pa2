@@ -1,8 +1,8 @@
 <li class="list-item-style">
     <div class="bookmark-item">
-        <span class="fa fa-folder left-item"></span>
-        <a href={{url}}>{{name}}</a>
-        <span class="fa fa-chevron-right right-item"></span>
+        <span class="fa fa-folder left-item folder-icon"></span>
+        <a class="bookmark-link" onclick="App.bookmarkExplorer.showBookmarks('sub')">{{name}}</a>
+        <span class="fa fa-chevron-right right-item" onclick="App.bookmarkExplorer.showBookmarks('sub')"></span>
         <span class="fa fa-edit right-item" onclick="App.bookMarkEdit.show()"></span>
     </div>
 </li>
