@@ -580,3 +580,33 @@ bm-upload-file-dialog .drag-and-drop-container {
 ::-webkit-input-placeholder { font-size: larger; }
 :-moz-placeholder { font-size: larger; }
 :-ms-input-placeholder { font-size: larger; }
+
+/* Bookmark Explorer */
+
+ul
+{
+    list-style-type: none;
+    position: relative;
+    right: 25px;
+
+}
+
+li {
+    border-bottom: 1px solid #c1bdba;
+    position: relative;
+
+
+}
+
+.bookmark-item {
+padding: 3px;
+}
+
+.right-item {
+    padding: 3px;
+    float: right;
+    position: relative;
+    left: 10px;
+
+}
+
