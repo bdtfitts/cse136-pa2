@@ -59,20 +59,13 @@
                 </div>
 
                 <div style="background-color: #A2AEBB"></div>
-                <!--<a style="font-size: 2em" href="javascript: void(0);" onclick="App.bookMarkUploader.show()"><span-->
-                <!--class="fa fa-cloud-upload"></span>&lt;== Sample button!</a>-->
-                <!-- Sample button for add new bookmark should be deleted and replaced later
-                     with window explorer buttons -->
-                <!--<div class="search-bar">-->
-                <!--<input type="search" placeholder="Search bookmarks...">-->
-                <!--<i class="fa fa-search" aria-hidden="true" title="Search"></i>-->
-                <!--</div>-->
+
                 <hr>
+                <div>
+                    <ul id="bookmark-list" onload="App.bookmarkExplorer.showBookmarks();">
 
-                <div id="bookmark-list" onload="App.bookmarkExplorer.showBookmarks();">
-
+                    </ul>
                 </div>
-
             </section>
 
 

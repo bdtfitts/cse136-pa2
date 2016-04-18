@@ -1,6 +1,8 @@
-<div style="background-color: rgba(122, 177, 223, 100);">
-    <p style="color: white;">
-        <span style="padding: 3px;" class="fa fa-folder"></span>
-        <a {{bind-attr href="url"}}>{{name}}</a>
-    </p>
-</div>
+<li class="list-item-style">
+    <div class="bookmark-item">
+        <span class="fa fa-folder left-item"></span>
+        <a href={{url}}>{{name}}</a>
+        <span class="fa fa-chevron-right right-item"></span>
+        <span class="fa fa-edit right-item" onclick="App.bookMarkEdit.show()"></span>
+    </div>
+</li>
