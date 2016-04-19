@@ -359,7 +359,7 @@ bm-app {
 
 #bookmark-explorer {
     background-color: #4b4b60;
-    height: 90vh;
+    height: 55em;
 }
 
 #bookmark-dialog {
@@ -380,6 +380,7 @@ bm-app {
 }
 
 .dialog-header .dialog-title {
+    min-width: 50%;
     font-size: larger;
 }
 
@@ -420,15 +421,21 @@ bm-dialog-body {
     display: flex;
     flex-flow: row wrap;
     padding: 1em;
+    width: 100%;
 }
 
 bm-dialog-close .span {
     margin: 0;
 }
 
+bm-app {
+    display: block;
+}
+
 bm-create-dialog,
 bm-edit-dialog,
-bm-upload-file-dialog {
+bm-upload-file-dialog,
+bm-create-folder-dialog {
     display: flex;
     flex-flow: row wrap;
     height: auto;
@@ -651,47 +658,56 @@ form.dialog-form .dialog-input:focus {
     padding: 13px 13px 13px 54px;
 }
 
-form.dialog-form .focused {
-    color: #30aed6;
-    border: #30aed6 solid 3px;
-}
-
-#name {
+form.dialog-form .name {
     background-image: url(../img/at.svg);
     background-size: 30px 30px;
     background-position: 11px 8px;
     background-repeat: no-repeat;
 }
 
-#keywords {
+form.dialog-form .name:focus {
+    background-image: url(../img/at.svg);
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+}
+
+form.dialog-form .keywords {
     background-image: url(../img/flag.svg);
     background-size: 30px 30px;
     background-position: 11px 8px;
     background-repeat: no-repeat;
 }
 
-#keywords:focus {
+form.dialog-form .keywords:focus {
     background-image: url(../img/flag.svg);
     background-size: 30px 30px;
     background-position: 11px 8px;
     background-repeat: no-repeat;
 }
 
-#url {
+form.dialog-form .url {
     background-image: url(../img/link.svg);
     background-size: 30px 30px;
     background-position: 11px 8px;
     background-repeat: no-repeat;
 }
 
-#url:focus {
+form.dialog-form .url:focus {
     background-image: url(../img/link.svg);
     background-size: 30px 30px;
     background-position: 11px 8px;
     background-repeat: no-repeat;
 }
 
-#description {
+form.dialog-form .description {
+    background-image: url(../img/pencil.svg);
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+}
+
+form.dialog-form .description:focus {
     background-image: url(../img/pencil.svg);
     background-size: 30px 30px;
     background-position: 11px 8px;
@@ -728,7 +744,7 @@ form.dialog-form input:focus, form.dialog-form textarea:focus {
     background-color: rgba(193, 189, 186, 0.7);
 }
 
-button {
+button, .button {
     display: inline-block;
     margin: 0 10px 0 0;
     padding: .2em .7em;
@@ -737,11 +753,12 @@ button {
     line-height: 1.8;
 }
 
-button:focus {
+button:focus, .button:focus {
     outline: none
 }
 
-section.press button {
+section.press button,
+section.press .button {
     color: #fff;
     background-color: #6496c8;
     border: none;
@@ -750,18 +767,22 @@ section.press button {
 }
 
 section.press button:hover,
-section.press button.hover {
+section.press .button:hover,
+section.press button.hover,
+section.press .button.hover {
     background-color: #417cb8
 }
 
 section.press button:active,
-section.press button.active {
+section.press .button:active,
+section.press button.active
+section.press .button.active {
     background-color: #417cb8;
     box-shadow: 0 5px #27496d;
     transform: translateY(1px);
 }
 
-form.dialog-form section.press {
+.dialog section.press {
     display: flex;
     align-self: flex-end;
     margin-left: auto;
@@ -779,7 +800,7 @@ ul {
     list-style-type: none;
 }
 
-hr{
+hr {
     margin: 0;
 }
 
@@ -829,4 +850,17 @@ a.bookmark-link:hover {
 
 .hand {
     cursor: pointer;
+}
+
+.button {
+    cursor: pointer;
+}
+
+/* Create Folder */
+bm-create-folder-dialog {
+    width: 75%;
+}
+
+bm-create-folder-dialog .button {
+    margin-right: 0;
 }

@@ -1,6 +1,14 @@
 /* Custom element definitions */
 (function () {
     /* Custom element for uploader */
+    var bmApp = document.registerElement('bm-app', {
+        prototype: Object.create(HTMLButtonElement.prototype),
+        extends: 'div'
+    });
+
+    document.body.appendChild(new bmApp());
+    
+    /* Custom element for uploader */
     var bmUploadFileDialog = document.registerElement('bm-upload-file-dialog', {
         prototype: Object.create(HTMLButtonElement.prototype),
         extends: 'div'
@@ -38,6 +46,13 @@
 
     document.body.appendChild(new bmEditDialog());
 
+    var bmCreateFolderDialog = document.registerElement('bm-create-folder-dialog', {
+        prototype: Object.create(HTMLButtonElement.prototype),
+        extends: 'div'
+    });
+
+    document.body.appendChild(new bmCreateFolderDialog());
+
 })(window);
 
 /* Classes for elements - Everything gets attached to App class */
@@ -51,7 +66,20 @@
     App.bookmarkUploader = new BookmarkUploader();
     App.bookmarkCreate   = new BookmarkCreate();
     App.bookmarkEdit     = new BookmarkEdit();
+    App.createFolder     = new CreateFolder();
+    
+    function CreateFolder() {
+        this.template = App.templates['assets/templates/bm-create-folder.hbs.html'];
+    }
 
+    CreateFolder.prototype.show = function showCreateFolder() {
+        show('bm-create-folder-dialog', this.template);
+    };
+
+    CreateFolder.prototype.remove = function hideCreateFolder() {
+        hide('bm-create-folder-dialog');
+    };
+    
     /* Mock Bookmark Service*/
     function getBookmarks() {
 
