@@ -18,7 +18,7 @@
         cse 136 with Professor Thomas Powell</span></h4>
 </header>
 
-<div id="app-content" class="container" style="height: 64em;">
+<bm-app id="app-content" class="container" style="height: 64em;">
     <div class="row">
         <div class="col-md-4">
             <div id="bookmark-explorer">
@@ -27,7 +27,7 @@
                         <a class="box" href="javascript: void(0);" onclick="App.bookmarkCreate.show()">
                             <span class="fa fa-plus-square-o"></span>
                         </a>
-                        <a class="box" href="javascript: void(0);">
+                        <a class="box" href="javascript: void(0);" onclick="App.createFolder.show()">
                             <span class="fa fa-folder-o"></span>
                         </a>
                         <a class="box" href="javascript: void(0);" onclick="App.bookmarkUploader.show()">
@@ -76,7 +76,7 @@
         </div>
 
     </div>
-</div>
+</bm-app>
 
 
 <script src="assets/lib/handlebars/handlebars.min.js"></script>
