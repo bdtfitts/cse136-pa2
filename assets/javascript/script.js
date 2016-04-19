@@ -24,6 +24,20 @@
 
     document.body.appendChild(new bmDialogBody());
 
+    var bmCreateDialog = document.registerElement('bm-create-dialog', {
+        prototype: Object.create(HTMLButtonElement.prototype),
+        extends: 'div'
+    });
+
+    document.body.appendChild(new bmCreateDialog());
+
+    var bmEditDialog = document.registerElement('bm-edit-dialog', {
+        prototype: Object.create(HTMLButtonElement.prototype),
+        extends: 'div'
+    });
+
+    document.body.appendChild(new bmEditDialog());
+
 })(window);
 
 /* Classes for elements - Everything gets attached to App class */
@@ -34,9 +48,9 @@
     var dialogContainer = document.getElementById('bookmark-dialog');
 
     App.bookmarkExplorer = new BookmarkExplorer();
-    App.bookMarkUploader = new BookmarkUploader();
-    App.bookMarkCreate   = new BookmarkCreate();
-    App.bookMarkEdit     = new BookmarkEdit();
+    App.bookmarkUploader = new BookmarkUploader();
+    App.bookmarkCreate   = new BookmarkCreate();
+    App.bookmarkEdit     = new BookmarkEdit();
 
     /* Mock Bookmark Service*/
     function getBookmarks() {
@@ -131,49 +145,54 @@
 
     BookmarkExplorer.prototype.showBookmarks = function showBookmarks(reference) {
 
-        var bookExp = this;
+        var bookExp   = this;
         var bookmarks = getBookmarks();
 
         document.getElementById('bookmark-list').innerHTML = "";
-        
-        if (reference == 'top') {
+
+        if (reference == 'top')
+        {
             current = bookmarks.children;
         }
-        else {
-            
+        else
+        {
+
             current = bookmarks.children[5].children;
             printBookmarkListItem(bookExp.container, bookExp.subFolderBack, {});
         }
-        
+
         current.forEach(function (current) {
-            if (current.url) {
+            if (current.url)
+            {
                 printBookmarkListItem(bookExp.container, bookExp.itemTemplate, current);
             }
-            else{
+            else
+            {
                 printBookmarkListItem(bookExp.container, bookExp.folderTemplate, current);
             }
         })
     };
 
-    BookmarkExplorer.prototype.toggleFavorite = function toggleFavorite (ele) {
-        if(ele.classList.contains("fa-star-o")) {
+    BookmarkExplorer.prototype.toggleFavorite = function toggleFavorite(ele) {
+        if (ele.classList.contains("fa-star-o"))
+        {
             ele.classList.toggle("fa-star-o");
             ele.classList.add("fa-star")
         }
-        else {
+        else
+        {
             ele.classList.toggle("fa-star");
-            ele.classList.add("fa-star-o")   
+            ele.classList.add("fa-star-o")
         }
     };
 
-     function printBookmarkListItem(container, template, context) {
-         container.innerHTML += template(context);
+    function printBookmarkListItem(container, template, context) {
+        container.innerHTML += template(context);
     }
-
 
     /* Bookmark uploader */
     function BookmarkUploader() {
-        this.template  = App.templates['assets/templates/upload-file.hbs.html'];
+        this.template = App.templates['assets/templates/upload-file.hbs.html'];
     }
 
     BookmarkUploader.prototype.show = function showBookmarkUploader() {
@@ -186,41 +205,36 @@
 
     /* Bookmark create */
     function BookmarkCreate() {
-        this.template  = App.templates['assets/templates/bm-create.hbs.html'];
+        this.template = App.templates['assets/templates/bm-create-dialog.hbs.html'];
     }
 
     BookmarkCreate.prototype.show = function showBookmarkCreate() {
         show('bm-create-dialog', this.template);
     };
 
-    BookmarkCreate.prototype.remove = function hideBookmarkCreate() {
+    BookmarkCreate.prototype.remove = function removeBookmarkCreate(event) {
+        if (event)
+        {
+            event.preventDefault();
+        }
+
         hide('bm-create-dialog');
     };
 
-    function BookmarkEdit () {
-        this.container = document.getElementById('bookmark-dialog');
-        this.template = App.templates['assets/templates/bm-edit.hbs.html'];
-    }
-
-    BookmarkEdit.prototype.show = function showBookmarkEdit() {
-        if(document.getElementsByTagName('bm-edit-dialog').length !== 0) return;
-        document.getElementById('bookmark-dialog').innerHTML += this.template();
-    };
-
-    BookmarkEdit.prototype.remove = function hideBookmarkEdit() {
-        var dialog = document.getElementsByTagName('bm-edit-dialog');
-        this.container.removeChild(dialog[0]);
-    };
-
     function BookmarkEdit() {
-        this.template = App.templates['assets/templates/bm-edit.hbs.html'];
+        this.template = App.templates['assets/templates/bm-edit-dialog.hbs.html'];
     }
 
     BookmarkEdit.prototype.show = function showBookmarkEdit() {
         show('bm-edit-dialog', this.template);
     };
 
-    BookmarkEdit.prototype.remove = function hideBookmarkEdit() {
+    BookmarkEdit.prototype.remove = function removeBookmarkEdit(event) {
+        if (event)
+        {
+            event.preventDefault();
+        }
+
         hide('bm-edit-dialog');
     };
 
@@ -230,12 +244,15 @@
         /* Check if element is present */
         if (elements.length !== 0)
         {
-            var element = elements[0];
+            var element           = elements[0];
             element.style.display = 'none';
         }
     }
 
-    function show(tag, template) {
+    function show(tag, template, context) {
+
+        context = context || {};
+
         var elements = document.getElementsByTagName(tag);
         /* Check if element is present */
         if (elements.length !== 0)
@@ -251,10 +268,10 @@
         }
 
         /* Inserts html as first child element */
-        dialogContainer.insertAdjacentHTML('afterbegin', template());
+        dialogContainer.insertAdjacentHTML('afterbegin', template(context));
     }
 
-    function displayAsFirstChild (element) {
+    function displayAsFirstChild(element) {
         var firstChild = dialogContainer.firstChild;
 
         /* Shows element as the first child */

@@ -374,13 +374,23 @@ bm-app {
     box-shadow: .1em .1em .6em rgba(82, 78, 75, 0.59);
 }
 
+.dialog-header {
+    display: flex;
+    width: 100%;
+}
+
+.dialog-header .dialog-title {
+    font-size: larger;
+}
+
 #bookmark-dialog div:first-child {
     margin-top: 0;
 }
 
 /* 3. Page header */
-header {
-    margin: 0 auto;
+header, header.container {
+    margin-top: 2em;
+    margin-bottom: 3em;
 }
 
 header .sub-header {
@@ -409,6 +419,7 @@ bm-dialog-close span[onclick] {
 bm-dialog-body {
     display: flex;
     flex-flow: row wrap;
+    padding: 1em;
 }
 
 bm-dialog-close .span {
@@ -416,7 +427,8 @@ bm-dialog-close .span {
 }
 
 bm-create-dialog,
-bm-upload-file-dialog, bm-edit-dialog {
+bm-edit-dialog,
+bm-upload-file-dialog {
     display: flex;
     flex-flow: row wrap;
     height: auto;
@@ -573,98 +585,186 @@ bm-upload-file-dialog .drag-and-drop-container {
     font-family: 'Titillium Web';
     font-style: normal;
     font-weight: 400;
-    src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(./fonts/Titillium_Web.woff) format('woff');
+    src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(../fonts/Titillium_Web.woff) format('woff');
 }
 
 /* 8. Forms */
-::-webkit-input-placeholder { font-size: larger; }
-:-moz-placeholder { font-size: larger; }
-:-ms-input-placeholder { font-size: larger; }
+::-webkit-input-placeholder {
+    font-size: larger;
+}
 
-bm-edit-dialog, bm-create-dialog {
-    width: 100%;
+:-moz-placeholder {
+    font-size: larger;
+}
+
+:-ms-input-placeholder {
+    font-size: larger;
+}
+
+bm-create-dialog, bm-edit-dialog {
+    display: flex;
+    width: 80%;
     /*text-align: center;*/
 }
 
-bm-edit-dialog bm-dialog-body, bm-create-dialog bm-dialog-body {
-    margin: auto;
-    position: relative;
+bm-create-dialog bm-dialog-body,
+bm-edit-dialog bm-dialog-body {
+    flex-grow: 1;
 }
 
-#titleCol {
-    margin-left: 0px;
-    padding-left: 0px;
-}
-
-#keywordsCol {
-    margin-right: 0px;
-    padding-right: 0px;
-}
-
-#title, #keywords, #url, #description {
-    margin-bottom:.2em;
-    float:left;
-}
-
-
-
-
-
-
-bm-edit-dialog form input, bm-create-dialog form input {
-    border: 0.1em solid #ccc;
-    border-radius: 0.5em;
-    padding: 1%;
-    line-height: 1.5em;
-    letter-spacing: .01em;
-    background-color:  rgba(57, 120, 159, 100);
+form.dialog-form .name, form.dialog-form .keywords {
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    padding-left: 0;
     width: 100%;
-    margin-bottom: .5em;
 }
 
-bm-edit-dialog form textarea, bm-create-dialog form textarea {
-    border: 0.1em solid #ccc;
-    border-radius: 0.5em;
-    background-color: rgba(57, 120, 159, 100);
+.dialog-form {
+    width: 100%;
+}
 
+form.dialog-form .dialog-input {
+    color: #3c3c3c;
+    font-family: "Titillium Web";
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 0;
+    line-height: 22px;
+    background-color: rgba(193, 189, 186, 0.50);
+    padding: 13px 13px 13px 54px;
+    margin-bottom: 10px;
+    width: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
     box-sizing: border-box;
+    border: 3px solid rgba(193, 189, 186, 0.50);
+}
+
+form.dialog-form .dialog-input:focus {
+    background: #c1bdba;
+    box-shadow: 0;
+    border: 3px solid rgba(193, 189, 186, 0.50);
+    color: #3c3c3c;
+    outline: none;
+    padding: 13px 13px 13px 54px;
+}
+
+form.dialog-form .focused {
+    color: #30aed6;
+    border: #30aed6 solid 3px;
+}
+
+#name {
+    background-image: url(../img/at.svg);
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+}
+
+#keywords {
+    background-image: url(../img/flag.svg);
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+}
+
+#keywords:focus {
+    background-image: url(../img/flag.svg);
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+}
+
+#url {
+    background-image: url(../img/link.svg);
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+}
+
+#url:focus {
+    background-image: url(../img/link.svg);
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+}
+
+#description {
+    background-image: url(../img/pencil.svg);
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+}
+
+form.dialog-form textarea {
     width: 100%;
-    font-size: .9em;
-    height: 5em;
-    margin-bottom: 1.5em;
-
+    height: 150px;
+    line-height: 150%;
+    resize: vertical;
 }
 
-bm-edit-dialog form input[type="submit"], bm-create-dialog form input[type="submit"] {
-    margin-top: 4em;
-    width: 80px;
-    margin: auto;
-    text-align: center;
-    padding-right: 0;
-    padding-left: 2em;
+form.dialog-form select {
+    background-image: url(../img/folder.svg);
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    outline: 0;
+    -webkit-transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -ms-transition: 0.3s ease all;
+    -o-transition: 0.3s ease all;
+    transition: 0.3s ease all;
 }
 
+form.dialog-form select.dialog-select {
+    width: 50%;
+}
 
-@media screen and (max-width: 48em) {
-    bm-edit-dialog form input, bm-create-dialog form input {
-        margin-left: 3em;
-        margin-top: 0em;
-    }
+form.dialog-form input:hover, form.dialog-form textarea:hover,
+form.dialog-form input:focus, form.dialog-form textarea:focus {
+    background-color: rgba(193, 189, 186, 0.7);
+}
 
-    bm-edit-dialog form input[type="submit"], bm-create-dialog form input[type="submit"] {
-        margin-top: 0em;
-    }
+button {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    padding: .2em .7em;
+    font-size: 1.35em;
+    font-family: "Titillium Web";
+    line-height: 1.8;
+}
 
-    bm-edit-dialog form textarea {
-        margin-left: 2.3em;
-    }
+button:focus {
+    outline: none
+}
 
-    bm-edit-dialog form p, bm-create-dialog form p {
-        margin-left: 1em;
-        margin-top: 1em;
-    }
+section.press button {
+    color: #fff;
+    background-color: #6496c8;
+    border: none;
+    border-radius: .1em;
+    box-shadow: .1em .2em #27496d;
+}
+
+section.press button:hover,
+section.press button.hover {
+    background-color: #417cb8
+}
+
+section.press button:active,
+section.press button.active {
+    background-color: #417cb8;
+    box-shadow: 0 5px #27496d;
+    transform: translateY(1px);
+}
+
+form.dialog-form section.press {
+    display: flex;
+    align-self: flex-end;
+    margin-left: auto;
 }
 
 /* Bookmark Explorer */
@@ -674,8 +774,7 @@ bm-edit-dialog form input[type="submit"], bm-create-dialog form input[type="subm
     padding-left: 0;
 }
 
-ul
-{
+ul {
     list-style-type: none;
     /*position: relative;*/
     /*right: 25px;*/
@@ -708,10 +807,10 @@ a.bookmark-link:visited {
 }
 
 /*.right-item {*/
-    /*padding: 3px;*/
-    /*float: right;*/
-    /*position: relative;*/
-    /*left: 10px;*/
+/*padding: 3px;*/
+/*float: right;*/
+/*position: relative;*/
+/*left: 10px;*/
 
 /*}*/
 
