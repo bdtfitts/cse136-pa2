@@ -770,15 +770,17 @@ form.dialog-form section.press {
 /* Bookmark Explorer */
 
 #bookmark-list {
+    background-color: #414152;
     margin-top: 0;
     padding-left: 0;
 }
 
 ul {
     list-style-type: none;
-    /*position: relative;*/
-    /*right: 25px;*/
+}
 
+hr{
+    margin: 0;
 }
 
 .list-item-style {
@@ -789,36 +791,42 @@ ul {
 }
 
 a.bookmark-link:link {
-    color: rgba(57, 120, 159, 100);
+    color: #c1bdba;
 }
 
 a.bookmark-link:visited {
-    color: rgba(57, 120, 159, 100);
+    color: #c1bdba;
+}
+
+a.bookmark-link:hover {
+    color: #dbd7d4;
 }
 
 .bookmark-item {
     padding: .5em;
     height: 100%;
     display: flex;
-    /* align-self: center; */
-    /* align-content: inherit; */
     align-items: center;
-    /* justify-content: space-between; */
 }
 
-/*.right-item {*/
-/*padding: 3px;*/
-/*float: right;*/
-/*position: relative;*/
-/*left: 10px;*/
-
-/*}*/
-
-.left-item {
-    padding: 3px;
+.bookmark-icons {
+    padding-right: 1em;
+    color: rgba(57, 120, 159, 100);
 }
 
-.folder-icon {
-    color: rgba(107, 196, 165, 100);
+.edit-favorite-icons {
+    padding-left: 1em;
 }
 
+.folder-text {
+    color: #c1bdba;
+}
+
+.split-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hand {
+    cursor: pointer;
+}

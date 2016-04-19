@@ -86,7 +86,7 @@
                 children: []
             }, {
                 parent: 'root',
-                name: 'Boring Floderr',
+                name: 'Exciting Stuff',
                 url: '',
                 children: [{
                     parent: 'root',
